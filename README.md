@@ -8,7 +8,7 @@ This work was created during a semester for the course 'Point of Sales Robotics'
 
 ### License
 
-The source code is released under a [GNU General Public License, Version 3](pepper_mapping/LICENSE).
+The source code is released under a [GNU General Public License, Version 3](LICENSE).
 
 **Author(s): Mirko Reimbold**
 
@@ -38,7 +38,5 @@ Run RViz to see the laser scan and the created 2D Map with
 - [gmapping](http://wiki.ros.org/gmapping) (ROS Package to provide laser-based SLAM (Simultaneous Localization and Mapping))
 
 [ROS]: http://www.ros.org
-[depth_image_proc] http://wiki.ros.org/depth_image_proc
-[pointcloud_to_laserscan] http://wiki.ros.org/pointcloud_to_laserscan 
 [gmapping]: http://wiki.ros.org/gmapping
 
