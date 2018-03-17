@@ -1,0 +1,6 @@
+<launch>
+
+    <!-- Start RViz -->
+    <node pkg="rviz" type="rviz" name="pepper_rviz" args="-d $(find pepper_mapping)/rviz/pepper_mapping.rviz"/>
+    
+</launch>
