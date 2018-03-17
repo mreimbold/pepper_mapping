@@ -1,0 +1,41 @@
+<launch>
+
+    <!-- Depth Image -> Pointcloud -->
+    <node pkg="nodelet" type="nodelet" args="manager" name="depth_image_nodelet_manager" output="screen"/>
+    <node pkg="nodelet" type="nodelet" name="pepper_pointcloud" args="load depth_image_proc/point_cloud_xyz depth_image_nodelet_manager --no-bond">
+        <remap from="camera_info" to="/pepper_robot/naoqi_driver/camera/depth/camera_info"/>
+        <remap from="image_rect" to="/pepper_robot/naoqi_driver/camera/depth/image_raw"/>
+    </node>
+
+    <!-- Pointcloud -> Laserscan -->
+    <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pepper_fake_laser">
+        <remap from="cloud_in" to="points" />
+        <param name="scan_time" type="double" value="0.2" />
+        <param name="range_min" type="double" value="0.4" />
+        <param name="range_max" type="double" value="8.0" />
+        <param name="use_inf" type="boolean" value="true" />
+        <param name="min_height" type="double" value="0.05" />
+        <param name="max_height" type="double" value="1.0" />
+        <param name="target_frame" type="string" value="base_link" />
+        <param name="concurrency_level" type="int" value="0" />
+    </node>
+
+    <!-- Run Gmapping -->
+    <node pkg="gmapping" type="slam_gmapping" name="pepper_gmapping">
+        <remap from="odom" to="/pepper_robot/naoqi_driver/odom" />
+        <param name="map_update_interval" value="0.3" />
+        <param name="maxUrange" value="8.0" />
+        <param name="srr" value="0.1" />
+        <param name="srt" value="0.2" />
+        <param name="str" value="0.1" />
+        <param name="stt" value="0.2" />
+        <param name="linearUpdate" value="0.1" />
+        <param name="angularUpdate" value="0.1" />
+        <param name="xmin" value="-5.0" />
+        <param name="ymin" value="-5.0" />
+        <param name="xmax" value="5.0" />
+        <param name="ymax" value="5.0" />
+        <param name="delta" value="0.04" />
+    </node>
+
+</launch>
