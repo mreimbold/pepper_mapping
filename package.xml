@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>pepper_mapping</name>
+  <version>1.0.0</version>
+  <description>Mapping with Softbank's Pepper platform using fake laserscan and gmapping</description>
+
+  <maintainer email="mirko.reimbold@googlemail.com">Mirko Reimbold</maintainer>
+
+  <license>GNU GPLv3</license>
+
+  <author email="mirko.reimbold@googlemail.com">Mirko Reimbold</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>depth_image_proc</build_depend>
+  <build_depend>gmapping</build_depend>
+  <build_depend>pointcloud_to_laserscan</build_depend>
+  <build_export_depend>depth_image_proc</build_export_depend>
+  <build_export_depend>gmapping</build_export_depend>
+  <build_export_depend>pointcloud_to_laserscan</build_export_depend>
+  <exec_depend>depth_image_proc</exec_depend>
+  <exec_depend>gmapping</exec_depend>
+  <exec_depend>pointcloud_to_laserscan</exec_depend>
+
+</package>
