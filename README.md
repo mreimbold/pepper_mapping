@@ -12,7 +12,13 @@ The source code is released under a [GNU General Public License, Version 3](LICE
 
 **Author(s): Mirko Reimbold**
 
-The pepper_mapping package has been tested under [ROS] Kinetic Kame and Ubuntu 16.04.
+## Prerequisites
+
+This package has been tested under [ROS] Kinetic Kame and Ubuntu 16.04.
+
+In order to use this package please follow [this tutorial](http://wiki.ros.org/pepper/Tutorials) to setup your Pepper platform properly.
+
+As we use Pepper's depth camera you have to calibrate it, to do so you can follow [this tutorial](http://wiki.ros.org/pepper/Tutorials/Calibration#Depth_camera_calibration).
 
 ## Installation
 
@@ -22,6 +28,10 @@ The pepper_mapping package has been tested under [ROS] Kinetic Kame and Ubuntu 1
 	rosdep install pepper_mapping
 
 ## Usage
+
+Starting the bridge on Pepper
+
+	roslaunch pepper_bringup pepper_full.launch nao_ip:=<yourRobotIP> roscore_ip:=<roscore_ip> [network_interface:=<eth0|wlan0|vpn0>]
 
 Run the main node with
 
@@ -33,6 +43,7 @@ Run RViz to see the laser scan and the created 2D Map with
 
 #### Dependencies
 - [Robot Operating System (ROS)](http://wiki.ros.org) (middleware for robotics),
+- [naoqi_driver](https://github.com/ros-naoqi/naoqi_driver) (c++ bridge based on libqi)
 - [depth_image_proc](http://wiki.ros.org/depth_image_proc) (ROS Package to process depth images),
 - [pointcloud_to_laserscan](http://wiki.ros.org/pointcloud_to_laserscan) (ROS Package to convert 3D Point Cloud to 2D laser scans),
 - [gmapping](http://wiki.ros.org/gmapping) (ROS Package to provide laser-based SLAM (Simultaneous Localization and Mapping))
