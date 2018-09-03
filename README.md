@@ -1,5 +1,8 @@
 # Pepper Mapping
 
+[![ROS Kinetic Kame][ros-badge-image]][ros-badge-url]
+[![Ubuntu 16.04][ubuntu-badge-image]][ubuntu-badge-url]
+
 ## Overview
 
 Mapping with Softbank's Pepper platform using fake laserscan and [gmapping].
@@ -50,4 +53,9 @@ Run RViz to see the laser scan and the created 2D Map with
 
 [ROS]: http://www.ros.org
 [gmapping]: http://wiki.ros.org/gmapping
+
+[ros-badge-image]: https://img.shields.io/badge/ROS-Kinetic%20Kame-blue.svg
+[ros-badge-url]: http://wiki.ros.org/kinetic/Installation
+[ubuntu-badge-image]: https://img.shields.io/badge/Ubuntu-16.04-orange.svg
+[ubuntu-badge-url]: https://www.ubuntu.com/
 
